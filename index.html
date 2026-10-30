@@ -1,96 +1,211 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101820">
-<title>صلاحكو | خدمات وصيانة المنزل</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#101820;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px 18px;background:#17232e;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:bold;color:#65d6a5}
-.logo small{display:block;font-size:11px;color:#b7c5cf;font-weight:normal}
-button{border:0;border-radius:12px;padding:13px 18px;background:#65d6a5;color:#10251e;font-weight:bold;font-size:15px;cursor:pointer}
-.hero{padding:35px 20px;background:linear-gradient(145deg,#203b42,#14212b)}
-.hero h1{font-size:29px;line-height:1.5;margin:0 0 12px}
-.hero p{color:#c5d2d9;line-height:1.8}
-.section{padding:22px 17px}
-.section h2{font-size:21px}
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.service{background:#1b2a36;border:1px solid #304451;border-radius:15px;padding:18px 12px;text-align:center}
-.service span{font-size:30px}
-.service h3{font-size:16px;margin:10px 0 5px}
-.service p{font-size:12px;color:#aebdc7;margin:0}
-.panel{margin:10px 17px 25px;background:#1b2a36;padding:20px;border-radius:16px}
-input,select,textarea{width:100%;padding:14px;margin:8px 0 13px;border-radius:10px;border:1px solid #40515d;background:#101820;color:white;font-size:15px}
-label{font-size:14px;color:#d8e2e8}
-.panel button{width:100%;margin-top:8px}
-footer{text-align:center;padding:22px;color:#9aabb5;background:#17232e;font-size:13px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101820" />
+  <title>صلاحكو | خدمات الصيانة المنزلية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1218;--panel:#111e28;--panel2:#172733;--line:#263946;--text:#f3f7f9;--muted:#a9bac5;--gold:#d7a84b;--gold2:#f0c66f;--green:#37b987;--red:#ff7777}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0%,#1a303b 0,transparent 32%),var(--bg);color:var(--text);font-family:'Cairo',sans-serif;line-height:1.7}
+    .wrap{width:min(1100px,92%);margin:auto}.top{padding:18px 0;border-bottom:1px solid #ffffff12;background:#0b1218d9;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:25px;font-weight:800;color:var(--gold2)}.brand small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:1px;margin-top:-7px}
+    button,.btn{font:inherit;border:0;border-radius:12px;padding:11px 18px;cursor:pointer;font-weight:700}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171717}.secondary{background:#203440;color:var(--text);border:1px solid var(--line)}button:disabled{opacity:.55;cursor:not-allowed}
+    .hero{padding:64px 0 42px;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}.eyebrow{color:var(--gold2);font-weight:700}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.25;margin:10px 0}.hero p{color:var(--muted);max-width:650px}.hero-card{background:linear-gradient(145deg,#1b303b,#101b24);border:1px solid var(--line);padding:25px;border-radius:22px;box-shadow:0 18px 50px #0005}.hero-card strong{font-size:22px;color:var(--gold2)}.hero-card ul{padding-right:20px;color:var(--muted)}
+    section{padding:25px 0 45px}.section-head{margin-bottom:20px}.section-head h2{font-size:27px;margin:0}.section-head p{color:var(--muted);margin:3px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}.service h3{margin:0 0 5px;font-size:17px}.service p{color:var(--muted);font-size:13px;margin:0}.price{color:var(--gold2);font-weight:700;margin-top:10px;font-size:13px}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:18px}.panel h2,.panel h3{margin-top:0}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.tabs button.active{background:var(--gold);color:#171717}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}label{font-size:13px;color:#dce6eb}input,textarea,select{width:100%;padding:12px 13px;border-radius:11px;border:1px solid var(--line);background:#0b151d;color:var(--text);font:inherit;outline:none}input:focus,textarea:focus,select:focus{border-color:var(--gold)}textarea{min-height:95px;resize:vertical}.hint,.muted{color:var(--muted);font-size:12px}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:15px}.message{display:none;padding:11px 13px;border-radius:10px;margin:12px 0;font-size:13px}.message.show{display:block}.message.ok{background:#12392e;color:#a7f0d2}.message.err{background:#421f25;color:#ffc0c0}.hidden{display:none!important}
+    .account-line{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);text-align:center;font-size:12px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}.grid{grid-template-columns:1fr 1fr}}@media(max-width:500px){.grid,.form-grid{grid-template-columns:1fr}.hero h1{font-size:34px}.panel{padding:16px}.brand{font-size:22px}}
+  </style>
 </head>
 <body>
-<header>
- <div class="logo">صلاحكو<small>SALAHCO HOME SERVICES</small></div>
- <button onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">اطلب خدمة</button>
-</header>
+<header class="top"><div class="wrap nav">
+  <div class="brand">صلاحكو <small>SALAHCO HOME SERVICES</small></div>
+  <button id="headerAuth" class="secondary" type="button">حساب العميل</button>
+</div></header>
+<main class="wrap">
+  <div class="hero">
+    <div><div class="eyebrow">خدمات منزلك في مكان واحد</div><h1>الصيانة بقت أسهل<br>مع <span style="color:var(--gold2)">صلاحكو</span></h1>
+      <p>اطلب خدمة الصيانة اللي محتاجها، وفريق صلاحكو هيتابع طلبك من البداية لحد إتمام الخدمة.</p>
+      <a href="#request"><button class="primary" type="button">اطلب خدمة الآن</button></a>
+    </div>
+    <div class="hero-card"><strong>صلاحكو في خدمتك</strong><ul><li>خدمات صيانة منزلية متنوعة</li><li>متابعة الطلب من خلال الشركة</li><li>تسعير وفواتير من الإدارة</li><li>نبدأ معاك في الإسكندرية</li></ul></div>
+  </div>
 
-<section class="hero">
- <h1>بيتك في أمان مع صلاحكو 🏠</h1>
- <p>كل خدمات الصيانة المنزلية في مكان واحد. اطلب فني متخصص، وإحنا نهتم بالباقي.</p>
- <button onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">اطلب صيانة الآن</button>
-</section>
+  <section id="services"><div class="section-head"><h2>خدماتنا</h2><p>الخدمات المتاحة حاليًا من قاعدة بيانات صلاحكو</p></div>
+    <div id="servicesList" class="grid"><div class="service">جاري تحميل الخدمات...</div></div>
+    <div id="servicesMessage" class="hint"></div>
+  </section>
 
-<section class="section">
- <h2>خدماتنا</h2>
- <div class="services">
-  <div class="service"><span>🔌</span><h3>كهرباء</h3><p>أعمال وصيانة الكهرباء</p></div>
-  <div class="service"><span>🚿</span><h3>سباكة</h3><p>إصلاح وصيانة السباكة</p></div>
-  <div class="service"><span>❄️</span><h3>تكييف</h3><p>صيانة وتركيب التكييف</p></div>
-  <div class="service"><span>📺</span><h3>شاشات ورسيفرات</h3><p>صيانة الأجهزة الإلكترونية</p></div>
-  <div class="service"><span>📷</span><h3>كاميرات مراقبة</h3><p>تركيب وصيانة الكاميرات</p></div>
-  <div class="service"><span>🛠️</span><h3>صيانة عامة</h3><p>مختلف أعمال المنزل</p></div>
- </div>
-</section>
+  <section id="account"><div class="panel">
+    <div class="section-head"><h2>حساب العميل</h2><p>سجل بالبريد الإلكتروني لمتابعة طلبات الصيانة.</p></div>
+    <div id="signedOut">
+      <div class="tabs"><button class="secondary active" id="loginTab" type="button">تسجيل الدخول</button><button class="secondary" id="signupTab" type="button">إنشاء حساب جديد</button></div>
+      <form id="authForm">
+        <div id="nameField" class="field hidden"><label for="fullName">الاسم بالكامل</label><input id="fullName" autocomplete="name" /></div>
+        <div id="phoneField" class="field hidden" style="margin-top:12px"><label for="phone">رقم الهاتف</label><input id="phone" type="tel" autocomplete="tel" /></div>
+        <div class="field" style="margin-top:12px"><label for="email">البريد الإلكتروني</label><input id="email" type="email" required autocomplete="email" /></div>
+        <div class="field" style="margin-top:12px"><label for="password">كلمة المرور</label><input id="password" type="password" required minlength="6" autocomplete="current-password" /></div>
+        <div class="actions"><button class="primary" id="authSubmit" type="submit">دخول</button></div>
+      </form>
+    </div>
+    <div id="signedIn" class="hidden"><div class="account-line"><div>أهلًا <strong id="userName">بك</strong>، أنت مسجل الدخول.</div><button class="secondary" id="logout" type="button">تسجيل الخروج</button></div></div>
+    <div id="authMessage" class="message"></div>
+  </div></section>
 
-<section class="panel" id="request">
- <h2>اطلب خدمة صيانة</h2>
- <form id="serviceForm">
-  <label>الاسم</label>
-  <input id="name" required placeholder="اكتب اسمك">
-  <label>رقم الموبايل</label>
-  <input id="phone" type="tel" required placeholder="01xxxxxxxxx">
-  <label>الخدمة المطلوبة</label>
-  <select id="service" required>
-   <option value="">اختر الخدمة</option>
-   <option>كهرباء</option><option>سباكة</option>
-   <option>تكييف</option><option>شاشات ورسيفرات</option>
-   <option>كاميرات مراقبة</option><option>صيانة عامة</option>
-  </select>
-  <label>العنوان في الإسكندرية</label>
-  <input id="address" required placeholder="المنطقة والشارع">
-  <label>تفاصيل العطل</label>
-  <textarea id="details" rows="3" placeholder="اشرح لنا المشكلة"></textarea>
-  <button type="submit">إرسال طلب الصيانة</button>
- </form>
-</section>
+  <section id="request"><div class="panel">
+    <div class="section-head"><h2>طلب صيانة جديد</h2><p>سجل الدخول أولًا، ثم اكتب بيانات الطلب وسنتابع معك.</p></div>
+    <div id="requestLoginNote" class="message show">لتقديم طلب صيانة، سجل الدخول إلى حسابك أولًا.</div>
+    <form id="requestForm" class="hidden">
+      <div class="form-grid">
+        <div class="field"><label for="customerName">اسم العميل</label><input id="customerName" required /></div>
+        <div class="field"><label for="customerPhone">رقم الهاتف</label><input id="customerPhone" type="tel" required /></div>
+        <div class="field full"><label for="serviceSelect">اختر الخدمة</label><select id="serviceSelect" required><option value="">اختر الخدمة</option></select></div>
+        <div class="field full"><label for="address">عنوان العميل بالتفصيل</label><input id="address" required placeholder="المنطقة والشارع ورقم العقار" /></div>
+        <div class="field full"><label for="problem">وصف المشكلة</label><textarea id="problem" placeholder="اشرح لنا العطل أو الخدمة المطلوبة"></textarea></div>
+      </div>
+      <div class="hint" style="margin-top:10px">سيتم تسجيل طلبك بحالة «قيد المراجعة»، وسيتم التواصل معك لتأكيد التفاصيل والسعر.</div>
+      <div class="actions"><button class="primary" id="requestSubmit" type="submit">إرسال طلب الصيانة</button></div>
+    </form>
+    <div id="requestMessage" class="message"></div>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap">© <span id="year"></span> صلاحكو — جميع الحقوق محفوظة</div></footer>
 
-<footer>© صلاحكو 2026 - خدمات منزلك في مكان واحد</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-document.getElementById('serviceForm').addEventListener('submit',function(e){
- e.preventDefault();
- const request={
-  name:document.getElementById('name').value,
-  phone:document.getElementById('phone').value,
-  service:document.getElementById('service').value,
-  address:document.getElementById('address').value,
-  details:document.getElementById('details').value
- };
- alert('تم تجهيز طلبك يا '+request.name+' بنجاح تجريبيًا. سيتم ربط الطلب بنظام صلاحكو في الخطوة القادمة.');
- this.reset();
-});
+(() => {
+  const SUPABASE_URL = 'https://qrdqfxnkuwawievlsezo.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_UY9Bzj3e5feInWbcHwoWaw_wLCtI5Yk';
+  const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const $ = (id) => document.getElementById(id);
+  let mode = 'login';
+  let activeServices = [];
+
+  function showMessage(id, text, type='ok') {
+    const el = $(id); el.textContent = text; el.className = 'message show ' + type;
+  }
+  function clearMessage(id) { const el=$(id); el.textContent=''; el.className='message'; }
+  function setMode(next) {
+    mode=next;
+    $('loginTab').classList.toggle('active',mode==='login');
+    $('signupTab').classList.toggle('active',mode==='signup');
+    $('nameField').classList.toggle('hidden',mode!=='signup');
+    $('phoneField').classList.toggle('hidden',mode!=='signup');
+    $('authSubmit').textContent=mode==='login'?'دخول':'إنشاء الحساب';
+    $('password').autocomplete=mode==='login'?'current-password':'new-password';
+    clearMessage('authMessage');
+  }
+  $('loginTab').addEventListener('click',()=>setMode('login'));
+  $('signupTab').addEventListener('click',()=>setMode('signup'));
+  $('headerAuth').addEventListener('click',()=>$('account').scrollIntoView({behavior:'smooth'}));
+  $('year').textContent=new Date().getFullYear();
+
+  async function loadServices() {
+    const list=$('servicesList'), select=$('serviceSelect');
+    const {data,error}=await client.from('services').select('id,name,description,base_price').eq('is_active',true).order('created_at');
+    if(error) {
+      list.innerHTML='<div class="service">تعذر تحميل الخدمات حاليًا.</div>';
+      $('servicesMessage').textContent='تأكد من اتصال الإنترنت وإعدادات صلاحيات جدول الخدمات في Supabase.';
+      return;
+    }
+    activeServices=data||[];
+    if(!activeServices.length) { list.innerHTML='<div class="service">لا توجد خدمات متاحة حاليًا.</div>'; return; }
+    list.innerHTML=activeServices.map(s=>`<article class="service"><h3>${escapeHtml(s.name||'خدمة صيانة')}</h3><p>${escapeHtml(s.description||'تواصل معنا لمعرفة التفاصيل.')}</p><div class="price">${s.base_price==null?'السعر يحدد بعد مراجعة الطلب':'السعر الأساسي: '+escapeHtml(String(s.base_price))+' جنيه'}</div></article>`).join('');
+    select.innerHTML='<option value="">اختر الخدمة</option>'+activeServices.map(s=>`<option value="${escapeHtml(s.id)}">${escapeHtml(s.name||'خدمة')}</option>`).join('');
+  }
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function setSignedIn(user) {
+    const yes=!!user;
+    $('signedOut').classList.toggle('hidden',yes);
+    $('signedIn').classList.toggle('hidden',!yes);
+    $('requestForm').classList.toggle('hidden',!yes);
+    $('requestLoginNote').classList.toggle('hidden',yes);
+    $('headerAuth').textContent=yes?'حسابي':'حساب العميل';
+    if(user) {
+      const meta=user.user_metadata||{};
+      $('userName').textContent=meta.full_name||user.email||'بك';
+      $('customerName').value=meta.full_name||'';
+      $('customerPhone').value=meta.phone||'';
+    }
+  }
+  async function refreshSession() {
+    const {data,error}=await client.auth.getSession();
+    if(!error) setSignedIn(data.session?.user||null);
+  }
+
+  $('authForm').addEventListener('submit',async (e)=>{
+    e.preventDefault(); clearMessage('authMessage');
+    const email=$('email').value.trim(), password=$('password').value;
+    $('authSubmit').disabled=true;
+    try {
+      if(mode==='signup') {
+        const full_name=$('fullName').value.trim(), phone=$('phone').value.trim();
+        if(!full_name||!phone) throw new Error('اكتب الاسم ورقم الهاتف لإكمال إنشاء الحساب.');
+        const {data,error}=await client.auth.signUp({email,password,options:{data:{full_name,phone}}});
+        if(error) throw error;
+        if(data.session) {
+          setSignedIn(data.user);
+          showMessage('authMessage','تم إنشاء حسابك وتسجيل الدخول بنجاح.');
+        } else {
+          showMessage('authMessage','تم إنشاء الحساب. افتح بريدك الإلكتروني واضغط رابط التأكيد، ثم ارجع وسجل الدخول.');
+        }
+      } else {
+        const {data,error}=await client.auth.signInWithPassword({email,password});
+        if(error) throw error;
+        setSignedIn(data.user);
+        showMessage('authMessage','تم تسجيل الدخول بنجاح.');
+      }
+    } catch(err) { showMessage('authMessage',err.message||'حدث خطأ. حاول مرة أخرى.','err'); }
+    finally { $('authSubmit').disabled=false; }
+  });
+
+  $('logout').addEventListener('click',async ()=>{
+    const {error}=await client.auth.signOut();
+    if(error) showMessage('authMessage',error.message,'err');
+    else {setSignedIn(null);showMessage('authMessage','تم تسجيل الخروج.');}
+  });
+
+  $('requestForm').addEventListener('submit',async (e)=>{
+    e.preventDefault(); clearMessage('requestMessage');
+    const {data:{user},error:authError}=await client.auth.getUser();
+    if(authError||!user) {setSignedIn(null);showMessage('requestMessage','سجل الدخول أولًا لإرسال الطلب.','err');return;}
+    const serviceId=$('serviceSelect').value;
+    if(!serviceId) {showMessage('requestMessage','اختر الخدمة المطلوبة.','err');return;}
+    const payload={
+      customer_id:user.id,
+      service_id:serviceId,
+      customer_name:$('customerName').value.trim(),
+      customer_phone:$('customerPhone').value.trim(),
+      address:$('address').value.trim(),
+      problem_description:$('problem').value.trim()
+    };
+    if(!payload.customer_name||!payload.customer_phone||!payload.address) {
+      showMessage('requestMessage','من فضلك أكمل الاسم ورقم الهاتف والعنوان.','err');return;
+    }
+    $('requestSubmit').disabled=true;
+    try {
+      const {error}=await client.from('service_requests').insert(payload);
+      if(error) throw error;
+      showMessage('requestMessage','تم إرسال طلبك بنجاح إلى صلاحكو. سنتواصل معك لتأكيد التفاصيل.');
+      $('address').value='';$('problem').value='';$('serviceSelect').value='';
+    } catch(err) {
+      showMessage('requestMessage','لم يتم حفظ الطلب: '+(err.message||'حدث خطأ غير معروف')+' — راجع صلاحيات جدول الطلبات في Supabase.','err');
+    } finally { $('requestSubmit').disabled=false; }
+  });
+
+  client.auth.onAuthStateChange((_event,session)=>setSignedIn(session?.user||null));
+  loadServices();
+  refreshSession();
+})();
 </script>
 </body>
 </html>
