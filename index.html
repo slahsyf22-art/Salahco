@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<title>صلاحكو | خدمات وصيانة المنزل</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101820;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 18px;background:#17232e;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:bold;color:#65d6a5}
+.logo small{display:block;font-size:11px;color:#b7c5cf;font-weight:normal}
+button{border:0;border-radius:12px;padding:13px 18px;background:#65d6a5;color:#10251e;font-weight:bold;font-size:15px;cursor:pointer}
+.hero{padding:35px 20px;background:linear-gradient(145deg,#203b42,#14212b)}
+.hero h1{font-size:29px;line-height:1.5;margin:0 0 12px}
+.hero p{color:#c5d2d9;line-height:1.8}
+.section{padding:22px 17px}
+.section h2{font-size:21px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.service{background:#1b2a36;border:1px solid #304451;border-radius:15px;padding:18px 12px;text-align:center}
+.service span{font-size:30px}
+.service h3{font-size:16px;margin:10px 0 5px}
+.service p{font-size:12px;color:#aebdc7;margin:0}
+.panel{margin:10px 17px 25px;background:#1b2a36;padding:20px;border-radius:16px}
+input,select,textarea{width:100%;padding:14px;margin:8px 0 13px;border-radius:10px;border:1px solid #40515d;background:#101820;color:white;font-size:15px}
+label{font-size:14px;color:#d8e2e8}
+.panel button{width:100%;margin-top:8px}
+footer{text-align:center;padding:22px;color:#9aabb5;background:#17232e;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">صلاحكو<small>SALAHCO HOME SERVICES</small></div>
+ <button onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">اطلب خدمة</button>
+</header>
+
+<section class="hero">
+ <h1>بيتك في أمان مع صلاحكو 🏠</h1>
+ <p>كل خدمات الصيانة المنزلية في مكان واحد. اطلب فني متخصص، وإحنا نهتم بالباقي.</p>
+ <button onclick="document.getElementById('request').scrollIntoView({behavior:'smooth'})">اطلب صيانة الآن</button>
+</section>
+
+<section class="section">
+ <h2>خدماتنا</h2>
+ <div class="services">
+  <div class="service"><span>🔌</span><h3>كهرباء</h3><p>أعمال وصيانة الكهرباء</p></div>
+  <div class="service"><span>🚿</span><h3>سباكة</h3><p>إصلاح وصيانة السباكة</p></div>
+  <div class="service"><span>❄️</span><h3>تكييف</h3><p>صيانة وتركيب التكييف</p></div>
+  <div class="service"><span>📺</span><h3>شاشات ورسيفرات</h3><p>صيانة الأجهزة الإلكترونية</p></div>
+  <div class="service"><span>📷</span><h3>كاميرات مراقبة</h3><p>تركيب وصيانة الكاميرات</p></div>
+  <div class="service"><span>🛠️</span><h3>صيانة عامة</h3><p>مختلف أعمال المنزل</p></div>
+ </div>
+</section>
+
+<section class="panel" id="request">
+ <h2>اطلب خدمة صيانة</h2>
+ <form id="serviceForm">
+  <label>الاسم</label>
+  <input id="name" required placeholder="اكتب اسمك">
+  <label>رقم الموبايل</label>
+  <input id="phone" type="tel" required placeholder="01xxxxxxxxx">
+  <label>الخدمة المطلوبة</label>
+  <select id="service" required>
+   <option value="">اختر الخدمة</option>
+   <option>كهرباء</option><option>سباكة</option>
+   <option>تكييف</option><option>شاشات ورسيفرات</option>
+   <option>كاميرات مراقبة</option><option>صيانة عامة</option>
+  </select>
+  <label>العنوان في الإسكندرية</label>
+  <input id="address" required placeholder="المنطقة والشارع">
+  <label>تفاصيل العطل</label>
+  <textarea id="details" rows="3" placeholder="اشرح لنا المشكلة"></textarea>
+  <button type="submit">إرسال طلب الصيانة</button>
+ </form>
+</section>
+
+<footer>© صلاحكو 2026 - خدمات منزلك في مكان واحد</footer>
+
+<script>
+document.getElementById('serviceForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const request={
+  name:document.getElementById('name').value,
+  phone:document.getElementById('phone').value,
+  service:document.getElementById('service').value,
+  address:document.getElementById('address').value,
+  details:document.getElementById('details').value
+ };
+ alert('تم تجهيز طلبك يا '+request.name+' بنجاح تجريبيًا. سيتم ربط الطلب بنظام صلاحكو في الخطوة القادمة.');
+ this.reset();
+});
+</script>
+</body>
+</html>
